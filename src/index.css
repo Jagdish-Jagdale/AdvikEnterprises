@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Roboto", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+
+  --color-advik-navy: #001F3F; /* Corrected to match the dark navy in search button */
+  --color-advik-yellow: #F7B500; /* Corrected to match the vibrant yellow in logo/text */
+  --color-advik-dark: #333333;
+  --color-advik-light: #F8F9FA;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    color: var(--color-advik-dark);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}
+
+@layer utilities {
+  .advik-container {
+    @apply container mx-auto px-4 lg:px-6;
+  }
+
+  .btn-yellow {
+    @apply bg-advik-yellow text-advik-navy px-6 py-2 font-black uppercase text-sm tracking-widest transition-all hover:bg-advik-navy hover:text-white;
+  }
+
+  .btn-navy {
+    @apply bg-advik-navy text-white px-6 py-2 font-bold uppercase text-sm tracking-widest transition-all hover:bg-advik-yellow hover:text-advik-navy;
+  }
+
+  .hero-text-box {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+  }
+}
