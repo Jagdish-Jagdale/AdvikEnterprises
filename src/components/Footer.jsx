@@ -56,7 +56,8 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="lg:w-auto lg:pt-8">
-            <h4 className="font-display text-advik-yellow mb-6 uppercase tracking-widest text-sm font-bold">Explore</h4>
+            <h4 className="font-display text-advik-yellow mb-4 uppercase tracking-widest text-sm font-bold">Explore</h4>
+            <div className="h-px bg-white/10 w-full mb-6" />
             <ul className="space-y-3 text-[13px] text-gray-400 list-none font-bold tracking-wide">
               <li>
                 <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-advik-yellow transition-colors uppercase">Home</Link>
@@ -89,48 +90,86 @@ const Footer = () => {
           </motion.div>
 
 
-          <motion.div variants={itemVariants} className="lg:w-auto lg:pt-8 lg:pl-8">
-            <h4 className="font-display text-advik-yellow mb-6">Contact Info</h4>
-            <ul className="space-y-4 text-sm text-gray-400 list-none">
-              <li className="flex gap-4">
-                <div className="text-advik-yellow mt-1 shrink-0">
-                  <MapPin size={18} />
+          <motion.div variants={itemVariants} className="lg:w-auto lg:pt-8 lg:pl-4">
+            <h4 className="font-display text-advik-yellow mb-4 uppercase tracking-widest text-sm font-bold">Contact Us</h4>
+            <div className="h-px bg-white/10 w-full mb-6" />
+            
+            <div className="space-y-6">
+              <div>
+                <h5 className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-4">Directors</h5>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-bold text-sm text-white uppercase tracking-wide">Bhushan Patil</span>
+                      <span className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter">(Director)</span>
+                    </div>
+                    <div className="text-xs text-gray-400 space-y-1 font-medium italic">
+                      <p>+91 83083 75196</p>
+                      <p>+91 77559 13303</p>
+                      <a href="mailto:bhushan@advikenterprises.com" className="hover:text-advik-yellow block truncate">bhushan@advikenterprises.com</a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-bold text-sm text-white uppercase tracking-wide">Harshal Patil</span>
+                      <span className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter">(Director)</span>
+                    </div>
+                    <div className="text-xs text-gray-400 space-y-1 font-medium italic">
+                      <p>+91 80076 76531</p>
+                      <a href="mailto:harshal@advikenterprises.com" className="hover:text-advik-yellow block truncate">harshal@advikenterprises.com</a>
+                    </div>
+                  </div>
                 </div>
-                <span>Gat No.440-/2, Pune-nashik Highway, Tal-khed, Dist Pune - 410501.</span>
-              </li>
-              <li className="flex gap-4">
-                <div className="text-advik-yellow mt-1 shrink-0">
-                  <Phone size={18} />
-                </div>
-                <span>+91 83083 75196<br />+91 77559 13303</span>
-              </li>
-              <li className="flex gap-4">
-                <div className="text-advik-yellow mt-1 shrink-0">
-                  <Mail size={18} />
-                </div>
-                <a href="mailto:contact.advikenterprises@gmail.com" className="hover:text-advik-yellow break-all transition-colors">contact.advikenterprises@gmail.com</a>
-              </li>
-            </ul>
+              </div>
+
+              <div>
+                <h5 className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-4">Official Mail</h5>
+                <ul className="space-y-2 text-xs text-gray-400 font-medium list-none italic">
+                  <li className="flex items-center gap-2">
+                    <Mail size={14} className="text-advik-yellow shrink-0" />
+                    <a href="mailto:info@advikenterprise.com" className="hover:text-advik-yellow truncate">info@advikenterprise.com</a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Mail size={14} className="text-advik-yellow shrink-0" />
+                    <a href="mailto:marketing@advikenterprises.com" className="hover:text-advik-yellow truncate">marketing@advikenterprises.com</a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Mail size={14} className="text-advik-yellow shrink-0" />
+                    <a href="mailto:contact.advikenterprises@gmail.com" className="hover:text-advik-yellow truncate text-[10px]">contact.advikenterprises@gmail.com</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Column 4: Map */}
-          <motion.div variants={itemVariants} className="lg:w-1/5 min-w-[180px]">
-            <a
-              href="https://maps.app.goo.gl/nAJzFKiUTwDVoDcm6?g_st=awb"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block overflow-hidden border border-white/10 shadow-xl rounded-lg hover:border-advik-yellow/50 transition-all duration-300 h-full min-h-[150px]"
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.4296540583623!2d73.8582222!3d18.734336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c99c768b14ed%3A0xd7faa8684cc7acf!2sADVIK%20ENTERPRISES!5e0!3m2!1sen!2sin!4v1773385777092!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: '150px', pointerEvents: 'none' }}
-                allowFullScreen=""
-                loading="lazy"
-                className="transition-all duration-500"
-              ></iframe>
-            </a>
+          <motion.div variants={itemVariants} className="lg:w-1/4 lg:pt-8 min-w-[200px]">
+            <h4 className="font-display text-advik-yellow mb-4 uppercase tracking-widest text-sm font-bold">Location</h4>
+            <div className="h-px bg-white/10 w-full mb-6" />
+            <div className="space-y-5">
+              <div className="pb-4 border-b border-white/10">
+                <div className="flex gap-3 text-xs text-gray-400 font-medium items-start italic leading-relaxed">
+                  <MapPin size={18} className="text-advik-yellow shrink-0 mt-0.5" />
+                  <span>Gat No.440-/2, Pune-nashik Highway, Tal-khed, Dist Pune - 410501.</span>
+                </div>
+              </div>
+              <a
+                href="https://maps.app.goo.gl/nAJzFKiUTwDVoDcm6?g_st=awb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block overflow-hidden border border-white/10 shadow-xl rounded-lg hover:border-advik-yellow/50 transition-all duration-300 aspect-video group"
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.4296540583623!2d73.8582222!3d18.734336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c99c768b14ed%3A0xd7faa8684cc7acf!2sADVIK%20ENTERPRISES!5e0!3m2!1sen!2sin!4v1773385777092!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, pointerEvents: 'none' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  className="transition-all duration-500 scale-105 group-hover:scale-110"
+                ></iframe>
+              </a>
+            </div>
           </motion.div>
 
         </motion.div>

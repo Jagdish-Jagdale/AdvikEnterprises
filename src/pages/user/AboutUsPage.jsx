@@ -24,9 +24,9 @@ const AboutUsPage = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="/producstback.jpeg"
+          src="/Contactbg.jpeg"
           alt="Advik Enterprises Industrial Background"
-          className="w-full h-full object-cover"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] object-cover"
         />
         <div className="absolute inset-0 bg-advik-navy/60 flex items-center justify-center">
           <div className="text-center px-4">
@@ -94,23 +94,38 @@ const AboutUsPage = () => {
                 Welcome to Advik Enterprises, a trusted manufacturer and supplier of high-quality tapes and adhesive solutions. We are dedicated to providing durable, reliable, and cost-effective packaging products that cater to a variety of industries, ensuring exceptional performance and reliability. With a focus on innovation and customer satisfaction, we aim to deliver products that meet the unique needs of our diverse clientele.
               </p>
 
-              <div className="grid grid-cols-2 gap-8 pt-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center text-advik-yellow border border-gray-100">
-                    <Box size={24} />
+              {/* Director and stats Section */}
+              <div className="pt-8 space-y-12 border-l-2 border-advik-yellow/10 pl-10 relative">
+                {/* Visual accent from screenshot */}
+                <div className="absolute top-8 left-0 w-[4px] h-24 bg-advik-yellow -translate-x-full"></div>
+                
+                <div className="flex flex-wrap gap-x-16 gap-y-10">
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-black text-advik-navy uppercase tracking-tight font-display">Bhushan Patil</h3>
+                    <div className="flex items-center gap-4">
+                      <div className="w-8 h-[2px] bg-advik-yellow/30"></div>
+                      <span className="text-[10px] font-black text-advik-yellow uppercase tracking-[0.4em]">Director</span>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-2xl font-black text-advik-navy">35+</p>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Manufacturing Products</p>
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-black text-advik-navy uppercase tracking-tight font-display">Harshal Patil</h3>
+                    <div className="flex items-center gap-4">
+                      <div className="w-8 h-[2px] bg-advik-yellow/30"></div>
+                      <span className="text-[10px] font-black text-advik-yellow uppercase tracking-[0.4em]">Director</span>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-50 flex items-center justify-center text-advik-yellow border border-gray-100">
-                    <Target size={24} />
+
+                <div className="w-full max-w-xl h-px bg-gray-100"></div>
+
+                <div className="flex flex-wrap gap-x-24 gap-y-8">
+                  <div className="space-y-2">
+                    <p className="text-5xl font-black text-advik-navy font-display">35+</p>
+                    <p className="text-[10px] font-black text-advik-yellow uppercase tracking-[0.2em]">Manufacturing</p>
                   </div>
-                  <div>
-                    <p className="text-2xl font-black text-advik-navy">100%</p>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Quality Driven</p>
+                  <div className="space-y-2">
+                    <p className="text-5xl font-black text-advik-navy font-display">100%</p>
+                    <p className="text-[10px] font-black text-advik-yellow uppercase tracking-[0.2em]">Quality Driven</p>
                   </div>
                 </div>
               </div>

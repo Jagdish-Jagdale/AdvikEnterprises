@@ -148,7 +148,11 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <p className="font-display text-sm text-advik-navy mb-1">Email Connect</p>
-                  <p className="text-gray-500 text-sm">contact.advikenterprises@gmail.com</p>
+                  <div className="text-gray-500 text-sm space-y-1">
+                    <p>info@advikenterprise.com</p>
+                    <p>marketing@advikenterprises.com</p>
+                    <p className="break-all text-xs opacity-70">contact.advikenterprises@gmail.com</p>
+                  </div>
                 </div>
               </div>
             </div>

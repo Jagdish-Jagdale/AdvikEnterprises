@@ -5,8 +5,8 @@ const Services = () => {
   const services = [
     { title: "Bopp Tapes", image: "/bopp-tapes.png", desc: "High-quality Bopp tapes for all your industrial packaging needs." },
     { title: "Pallets", image: "/pallets.png", desc: "High-durability industrial pallets designed for heavy-duty logistics." },
-    { title: "Stretch Film", image: "/strech-film.jpeg", desc: "Superior stretch film for secure pallet wrapping and transit." },
-    { title: "Bubble Rolls", image: "/Bubble-rolls.jpeg", desc: "Premium bubble roll solutions for maximum transit protection." }
+    { title: "Stretch Film", image: "/stretch-film.png", desc: "Superior stretch film for secure pallet wrapping and transit." },
+    { title: "Bubble Rolls", image: "/bubble-roll.jpg", desc: "Premium bubble roll solutions for maximum transit protection." }
   ];
 
   return (

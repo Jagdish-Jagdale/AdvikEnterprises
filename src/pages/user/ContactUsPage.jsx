@@ -61,7 +61,7 @@ const ContactUsPage = () => {
         limit(10)
       );
       const querySnapshot = await getDocs(q);
-      
+
       let hasRecentSubmission = false;
       querySnapshot.forEach((doc) => {
         const docData = doc.data();
@@ -89,7 +89,7 @@ const ContactUsPage = () => {
         timestamp: serverTimestamp(),
         dateString: new Date().toLocaleDateString('en-GB')
       });
-      
+
       localStorage.setItem(LAST_SUBMIT_KEY, now.toString());
       toast.success("Message sent successfully!");
       setFormData({ name: '', email: '', message: '' });
@@ -110,9 +110,9 @@ const ContactUsPage = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="/producstback.jpeg"
+          src="/Contactbg.jpeg"
           alt="Advik Enterprises Office"
-          className="w-full h-full object-cover"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] object-cover"
         />
         <div className="absolute inset-0 bg-advik-navy/60 flex items-center justify-center">
           <div className="text-center px-4">
@@ -182,7 +182,11 @@ const ContactUsPage = () => {
               </div>
               <div className="space-y-1">
                 <p className="text-gray-400 font-inter text-[10px] uppercase font-bold tracking-widest">Email Connect</p>
-                <p className="text-advik-navy font-display text-base break-all">contact.advikenterprises@gmail.com</p>
+                <div className="text-advik-navy font-display text-sm space-y-1">
+                  <p>info@advikenterprise.com</p>
+                  <p>marketing@advikenterprises.com</p>
+                  <p>contact.advikenterprises@gmail.com</p>
+                </div>
               </div>
             </motion.div>
 
@@ -226,7 +230,7 @@ const ContactUsPage = () => {
 
             <form onSubmit={handleFormSubmit} className="p-8 md:p-12 space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -244,7 +248,7 @@ const ContactUsPage = () => {
                     required
                   />
                 </motion.div>
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -264,7 +268,7 @@ const ContactUsPage = () => {
                 </motion.div>
               </div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
