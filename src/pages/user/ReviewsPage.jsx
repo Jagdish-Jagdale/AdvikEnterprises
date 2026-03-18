@@ -89,9 +89,9 @@ const ReviewsPage = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="/Contactbg.jpeg"
+          src="/advik.png"
           alt="Advik Enterprises Industrial Background"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-advik-navy/60 flex items-center justify-center">
           <div className="text-center px-4">
@@ -145,30 +145,64 @@ const ReviewsPage = () => {
             </motion.h2>
           </div>
 
-          {/* Screenshots Grid with Cascade Animation */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch perspective-1000"
-          >
-            {reviewScreenshots.map((review) => (
-              <motion.div
-                key={review.id}
-                variants={itemVariants}
-                className="bg-white p-4 shadow-xl border border-gray-100 rounded-none group hover:border-advik-yellow transition-colors duration-500 h-full flex flex-col"
+          {/* Sliding Reviews Section */}
+          <div className="space-y-4 md:space-y-8 py-6 md:py-10 relative">
+
+
+            {/* Row 1: Sliding Left */}
+            <div className="flex overflow-hidden group animate-pause">
+              <div
+                className="flex gap-8 whitespace-nowrap min-w-max px-4 animate-marquee"
+                style={{ "--duration": "80s" }}
               >
-                <div className="aspect-[3/1] overflow-hidden bg-gray-50 border border-gray-200 flex items-center justify-center">
-                  <img
-                    src={review.src}
-                    alt={review.alt}
-                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                {[...reviewScreenshots.slice(0, 11), ...reviewScreenshots.slice(0, 11)].map((review, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ scale: 1.02 }}
+                    className="w-[280px] md:w-[400px] h-[100px] md:h-[150px] bg-white p-3 md:p-6 shadow-lg border border-gray-100 rounded-none cursor-pointer hover:border-advik-yellow transition-all duration-300 flex items-center justify-center overflow-hidden"
+                  >
+                    <img src={review.src} alt={review.alt} className="w-full h-full object-contain" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Row 2: Sliding Right */}
+            <div className="flex overflow-hidden group animate-pause">
+              <div
+                className="flex gap-8 whitespace-nowrap min-w-max px-4 animate-marquee-reverse"
+                style={{ "--duration": "80s" }}
+              >
+                {[...reviewScreenshots.slice(11, 22), ...reviewScreenshots.slice(11, 22)].map((review, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ scale: 1.02 }}
+                    className="w-[280px] md:w-[400px] h-[100px] md:h-[150px] bg-white p-3 md:p-6 shadow-lg border border-gray-100 rounded-none cursor-pointer hover:border-advik-yellow transition-all duration-300 flex items-center justify-center overflow-hidden"
+                  >
+                    <img src={review.src} alt={review.alt} className="w-full h-full object-contain" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Row 3: Sliding Left Fast */}
+            <div className="flex overflow-hidden group animate-pause">
+              <div
+                className="flex gap-8 whitespace-nowrap min-w-max px-4 animate-marquee"
+                style={{ "--duration": "80s" }}
+              >
+                {[...reviewScreenshots.slice(22), ...reviewScreenshots.slice(22)].map((review, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ scale: 1.02 }}
+                    className="w-[280px] md:w-[400px] h-[100px] md:h-[150px] bg-white p-3 md:p-6 shadow-lg border border-gray-100 rounded-none cursor-pointer hover:border-advik-yellow transition-all duration-300 flex items-center justify-center overflow-hidden"
+                  >
+                    <img src={review.src} alt={review.alt} className="w-full h-full object-contain" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>

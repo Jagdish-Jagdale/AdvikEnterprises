@@ -24,9 +24,9 @@ const AboutUsPage = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="/Contactbg.jpeg"
+          src="/advik.png"
           alt="Advik Enterprises Industrial Background"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-advik-navy/60 flex items-center justify-center">
           <div className="text-center px-4">

@@ -136,20 +136,10 @@ const Navbar = () => {
       className="bg-white shadow-md sticky top-0 z-50"
     >
       <div className="advik-container">
-        <div className="flex items-center justify-start lg:justify-between h-16 relative">
+        <div className="flex items-center justify-between h-16 relative w-full">
 
-          {/* Mobile Menu Toggle - Left Side */}
-          <div className="flex items-center lg:hidden pl-4">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-advik-yellow"
-            >
-              {isOpen ? <X size={32} /> : <Menu size={32} />}
-            </button>
-          </div>
-
-          {/* Logo - Centered on Mobile, Left-aligned on Desktop */}
-          <Link to="/" className="flex-shrink-0 flex items-center gap-2 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:ml-8">
+          {/* Logo - Left-aligned on Mobile and Desktop */}
+          <Link to="/" className="flex-shrink-0 flex items-center gap-2 pl-4 lg:pl-0 lg:ml-8">
             <img
               src="/AdvikTitle.png"
               alt="Advik Enterprises"
@@ -329,6 +319,16 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
             </div>
+          </div>
+
+          {/* Mobile Menu Toggle - Right Side */}
+          <div className="flex items-center lg:hidden pr-4 ml-auto">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-advik-yellow"
+            >
+              {isOpen ? <X size={32} /> : <Menu size={32} />}
+            </button>
           </div>
 
         </div>

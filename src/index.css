@@ -54,4 +54,27 @@
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
   }
+
+  .animate-marquee {
+    animation: marquee var(--duration, 50s) linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse var(--duration, 50s) linear infinite;
+  }
+
+  .animate-pause:hover .animate-marquee,
+  .animate-pause:hover .animate-marquee-reverse {
+    animation-play-state: paused !important;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
 }

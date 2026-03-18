@@ -110,9 +110,9 @@ const ContactUsPage = () => {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          src="/Contactbg.jpeg"
+          src="/advik.png"
           alt="Advik Enterprises Office"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-advik-navy/60 flex items-center justify-center">
           <div className="text-center px-4">
@@ -204,7 +204,7 @@ const ContactUsPage = () => {
               <div className="space-y-1">
                 <p className="text-gray-400 font-inter text-[10px] uppercase font-bold tracking-widest">Office Address</p>
                 <p className="text-advik-navy font-display text-sm leading-relaxed">
-                  Gat No.440-/2, Pune-nashik Highway, Near alandi Phata, Tal-khed, Dist Pune - 410501.
+                  Gawatewasti, Gore Industrial Estate, Gat No.440/2, Alandi Fata, Chakan, Maharashtra 410501
                 </p>
               </div>
             </motion.div>

@@ -150,7 +150,7 @@ const Footer = () => {
               <div className="pb-4 border-b border-white/10">
                 <div className="flex gap-3 text-xs text-gray-400 font-medium items-start italic leading-relaxed">
                   <MapPin size={18} className="text-advik-yellow shrink-0 mt-0.5" />
-                  <span>Gat No.440-/2, Pune-nashik Highway, Tal-khed, Dist Pune - 410501.</span>
+                  <span>Gawatewasti, Gore Industrial Estate, Gat No.440/2, Alandi Fata, Chakan, Maharashtra 410501</span>
                 </div>
               </div>
               <a
