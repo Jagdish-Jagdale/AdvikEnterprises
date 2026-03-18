@@ -120,7 +120,7 @@ const ContactUsPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl md:text-7xl font-display text-white mb-6 uppercase tracking-tight"
+              className="text-4xl md:text-7xl font-display text-white mb-6 uppercase tracking-tight"
             >
               Contact Us
             </motion.h1>
@@ -157,15 +157,17 @@ const ContactUsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-8 flex items-start gap-6 shadow-sm border border-gray-100/50 hover:shadow-xl transition-all duration-500"
+              className="group bg-white p-6 md:p-8 flex items-start gap-4 md:gap-6 shadow-sm border border-gray-100/50 hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-14 h-14 bg-advik-yellow/10 flex items-center justify-center text-advik-yellow flex-shrink-0">
-                <Phone size={28} />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-advik-yellow/10 flex items-center justify-center text-advik-yellow flex-shrink-0 group-hover:bg-advik-yellow group-hover:text-advik-navy transition-colors">
+                <Phone className="size-6 md:size-7" />
               </div>
               <div className="space-y-1">
                 <p className="text-gray-400 font-inter text-[10px] uppercase font-bold tracking-widest">Call</p>
-                <p className="text-advik-navy font-display text-lg">+91 83083 75196</p>
-                <p className="text-advik-navy font-display text-lg">+91 77559 13303</p>
+                <div className="text-advik-navy font-display text-sm md:text-lg">
+                  <p>+91 83083 75196</p>
+                  <p>+91 77559 13303</p>
+                </div>
               </div>
             </motion.div>
 
@@ -175,17 +177,17 @@ const ContactUsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white p-8 flex items-start gap-6 shadow-sm border border-gray-100/50 hover:shadow-xl transition-all duration-500"
+              className="group bg-white p-6 md:p-8 flex items-start gap-4 md:gap-6 shadow-sm border border-gray-100/50 hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-14 h-14 bg-advik-yellow/10 flex items-center justify-center text-advik-yellow flex-shrink-0">
-                <Mail size={28} />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-advik-yellow/10 flex items-center justify-center text-advik-yellow flex-shrink-0 group-hover:bg-advik-yellow group-hover:text-advik-navy transition-colors">
+                <Mail className="size-6 md:size-7" />
               </div>
               <div className="space-y-1">
                 <p className="text-gray-400 font-inter text-[10px] uppercase font-bold tracking-widest">Email Connect</p>
-                <div className="text-advik-navy font-display text-sm space-y-1">
-                  <p>info@advikenterprise.com</p>
-                  <p>marketing@advikenterprises.com</p>
-                  <p>contact.advikenterprises@gmail.com</p>
+                <div className="text-advik-navy font-display text-[12px] md:text-sm space-y-1">
+                  <p className="break-all">info@advikenterprise.com</p>
+                  <p className="break-all">marketing@advikenterprises.com</p>
+                  <p className="break-all">contact.advikenterprises@gmail.com</p>
                 </div>
               </div>
             </motion.div>
@@ -196,14 +198,14 @@ const ContactUsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white p-8 flex items-start gap-6 shadow-sm border border-gray-100/50 hover:shadow-xl transition-all duration-500"
+              className="group bg-white p-6 md:p-8 flex items-start gap-4 md:gap-6 shadow-sm border border-gray-100/50 hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-14 h-14 bg-advik-yellow/10 flex items-center justify-center text-advik-yellow flex-shrink-0">
-                <MapPin size={28} />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-advik-yellow/10 flex items-center justify-center text-advik-yellow flex-shrink-0 group-hover:bg-advik-yellow group-hover:text-advik-navy transition-colors">
+                <MapPin className="size-6 md:size-7" />
               </div>
               <div className="space-y-1">
                 <p className="text-gray-400 font-inter text-[10px] uppercase font-bold tracking-widest">Office Address</p>
-                <p className="text-advik-navy font-display text-sm leading-relaxed">
+                <p className="text-advik-navy font-display text-[12px] md:text-sm leading-relaxed">
                   Gawatewasti, Gore Industrial Estate, Gat No.440/2, Alandi Fata, Chakan, Maharashtra 410501
                 </p>
               </div>
@@ -214,7 +216,7 @@ const ContactUsPage = () => {
       </section>
 
       {/* Have Questions Section */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-16 md:py-24 bg-white overflow-hidden">
         <div className="advik-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -222,14 +224,14 @@ const ContactUsPage = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto bg-white shadow-2xl border-t-8 border-advik-navy overflow-hidden"
           >
-            <div className="p-8 md:p-12 text-center border-b border-gray-100">
-              <h3 className="text-3xl md:text-4xl font-display text-advik-navy uppercase tracking-tight">
+            <div className="p-6 md:p-12 text-center border-b border-gray-100">
+              <h3 className="text-2xl md:text-4xl font-display text-advik-navy uppercase tracking-tight">
                 Have Questions? We're Here to Help!
               </h3>
             </div>
 
-            <form onSubmit={handleFormSubmit} className="p-8 md:p-12 space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <form onSubmit={handleFormSubmit} className="p-6 md:p-12 space-y-6 md:space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -307,6 +309,9 @@ const ContactUsPage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Map Section */}
+
 
     </div>
   );

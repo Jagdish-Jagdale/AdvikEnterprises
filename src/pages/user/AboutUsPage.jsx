@@ -64,11 +64,11 @@ const AboutUsPage = () => {
               viewport={{ once: true }}
               className="lg:w-1/2 relative"
             >
-              <div className="relative z-10 p-4 bg-white border-b-[20px] border-r-[20px] border-advik-yellow shadow-2xl">
+              <div className="relative z-10 p-3 md:p-4 bg-white border-b-[12px] border-r-[12px] md:border-b-[20px] md:border-r-[20px] border-advik-yellow shadow-2xl">
                 <img
                   src="/about-packaging.png"
                   alt="Packaging Solutions"
-                  className="w-full h-[60vh]"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[60vh] object-cover"
                 />
               </div>
               <div className="absolute -top-6 -left-6 w-32 h-32 border-t-8 border-l-8 border-advik-navy opacity-10"></div>
@@ -213,11 +213,11 @@ const AboutUsPage = () => {
               viewport={{ once: true }}
               className="lg:w-2/5 relative"
             >
-              <div className="h-full min-h-[400px] relative">
+              <div className="h-full min-h-[300px] md:min-h-[400px] relative">
                 <img
                   src="/about-pack.png"
                   alt="Industrial Excellence"
-                  className="w-full h-[55vh] object-cover  transition-all duration-700 border-l-[15px] border-advik-navy"
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-700 border-l-[10px] md:border-l-[15px] border-advik-navy"
                 />
                 <div className="absolute inset-0 border border-advik-yellow/20 m-6"></div>
               </div>

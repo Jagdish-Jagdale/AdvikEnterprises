@@ -42,7 +42,7 @@ const ProductPage = () => {
         } else {
           prodsQuery = query(collection(db, 'products'));
         }
-        
+
         const prodsSnap = await getDocs(prodsQuery);
         const allProds = prodsSnap.docs
           .map(doc => ({ id: doc.id, ...doc.data() }))
@@ -146,7 +146,7 @@ const ProductPage = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-col items-center justify-center min-h-[300px]"
             >
-              <div className="relative w-full max-w-[40%] aspect-square flex items-center justify-center bg-gray-50/50 rounded-2xl overflow-hidden shadow-sm">
+              <div className="relative w-full max-w-[70%] md:max-w-[50%] lg:max-w-[40%] aspect-square flex items-center justify-center bg-gray-50/50 rounded-2xl overflow-hidden shadow-sm">
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-100/50 to-gray-50 animate-pulse"></div>
                 <img
                   src={product.image || '/noimage.png'}
@@ -170,8 +170,10 @@ const ProductPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               {/* Description Header */}
-              <div className="inline-block bg-advik-yellow px-12 py-3 mb-8 rounded-md">
-                <span className="text-sm font-black text-advik-navy uppercase tracking-[0.2em]">Description</span>
+              <div className="text-center md:text-left flex justify-center md:justify-start">
+                <div className="inline-block bg-advik-yellow px-12 py-3 mb-8 rounded-md">
+                  <span className="text-sm font-black text-advik-navy uppercase tracking-[0.2em]">Description</span>
+                </div>
               </div>
 
               {/* Info Section */}
@@ -192,7 +194,7 @@ const ProductPage = () => {
                               const trimmedLine = line.trim();
                               const formattedLine = trimmedLine ? trimmedLine.charAt(0).toUpperCase() + trimmedLine.slice(1) : '';
                               return (
-                                <li key={i} className="flex gap-4 items-start">
+                                <li key={i} className="flex gap-4 items-start text-left">
                                   <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0" />
                                   <span className="flex-1 text-[15px] text-gray-700 font-medium font-inter leading-relaxed">{formattedLine}</span>
                                 </li>
@@ -201,12 +203,14 @@ const ProductPage = () => {
                           </ul>
 
                           {hasMore && (
-                            <button
-                              onClick={() => setShowFullDesc(!showFullDesc)}
-                              className="mt-8 text-advik-navy hover:text-advik-yellow font-black text-xs uppercase tracking-[0.2em] border-b-2 border-advik-navy/30 hover:border-advik-yellow transition-all py-1 flex items-center gap-2"
-                            >
-                              {showFullDesc ? 'Show Less' : 'Show More'}
-                            </button>
+                            <div className="flex justify-center md:justify-start">
+                              <button
+                                onClick={() => setShowFullDesc(!showFullDesc)}
+                                className="mt-8 text-advik-navy hover:text-advik-yellow font-black text-xs uppercase tracking-[0.2em] border-b-2 border-advik-navy/30 hover:border-advik-yellow transition-all py-1 flex items-center gap-2"
+                              >
+                                {showFullDesc ? 'Show Less' : 'Show More'}
+                              </button>
+                            </div>
                           )}
                         </>
                       );
@@ -265,7 +269,7 @@ const ProductPage = () => {
                       <span className="text-advik-yellow font-black text-[10px] tracking-widest uppercase mb-1 block group-hover:text-advik-navy transition-colors duration-300">
                         {item.category || 'Product'}
                       </span>
-                      <h4 className="text-xl font-display text-advik-navy leading-tight group-hover:text-advik-yellow transition-colors duration-300 uppercase break-words">
+                      <h4 className="text-sm sm:text-lg md:text-xl font-display text-advik-navy leading-tight group-hover:text-advik-yellow transition-colors duration-300 uppercase break-words">
                         {item.name}
                       </h4>
                     </div>
