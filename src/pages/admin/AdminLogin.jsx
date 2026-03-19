@@ -95,7 +95,7 @@ const AdminLogin = () => {
               <div className="flex justify-center mb-8">
                 <div className="inline-block">
                   <img
-                    src="/AdvikEnterpriceLogo.png"
+                    src="/AdvikFooter.png"
                     alt="Logo"
                     className="h-20 w-auto"
                   />

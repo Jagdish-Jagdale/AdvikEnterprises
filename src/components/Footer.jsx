@@ -93,7 +93,7 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="lg:w-auto lg:pt-8 lg:pl-4">
             <h4 className="font-display text-advik-yellow mb-4 uppercase tracking-widest text-sm font-bold">Contact Us</h4>
             <div className="h-px bg-white/10 w-full mb-6" />
-            
+
             <div className="space-y-6">
               <div>
                 <h5 className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-4">Directors</h5>
@@ -106,7 +106,7 @@ const Footer = () => {
                     <div className="text-xs text-gray-400 space-y-1 font-medium italic">
                       <p>+91 83083 75196</p>
                       <p>+91 77559 13303</p>
-                      <a href="mailto:bhushan@advikenterprises.com" className="hover:text-advik-yellow block truncate">bhushan@advikenterprises.com</a>
+                      <a href="mailto:bhushan@advikgroups.com" className="hover:text-advik-yellow block truncate">bhushan@advikgroups.com</a>
                     </div>
                   </div>
 
@@ -117,7 +117,7 @@ const Footer = () => {
                     </div>
                     <div className="text-xs text-gray-400 space-y-1 font-medium italic">
                       <p>+91 80076 76531</p>
-                      <a href="mailto:harshal@advikenterprises.com" className="hover:text-advik-yellow block truncate">harshal@advikenterprises.com</a>
+                      <a href="mailto:harshal@advikgroups.com" className="hover:text-advik-yellow block truncate">harshal@advikgroups.com</a>
                     </div>
                   </div>
                 </div>
@@ -128,15 +128,19 @@ const Footer = () => {
                 <ul className="space-y-2 text-xs text-gray-400 font-medium list-none italic">
                   <li className="flex items-center gap-2">
                     <Mail size={14} className="text-advik-yellow shrink-0" />
-                    <a href="mailto:info@advikenterprise.com" className="hover:text-advik-yellow truncate">info@advikenterprise.com</a>
+                    <a href="mailto:info@advikgroups.com" className="hover:text-advik-yellow truncate">info@advikgroups.com</a>
                   </li>
                   <li className="flex items-center gap-2">
                     <Mail size={14} className="text-advik-yellow shrink-0" />
-                    <a href="mailto:marketing@advikenterprises.com" className="hover:text-advik-yellow truncate">marketing@advikenterprises.com</a>
+                    <a href="mailto:marketing@advikgroups.com" className="hover:text-advik-yellow truncate">marketing@advikgroups.com</a>
                   </li>
                   <li className="flex items-center gap-2">
                     <Mail size={14} className="text-advik-yellow shrink-0" />
-                    <a href="mailto:contact.advikenterprises@gmail.com" className="hover:text-advik-yellow truncate text-[10px]">contact.advikenterprises@gmail.com</a>
+                    <a href="mailto:sales@advikgroups.com" className="hover:text-advik-yellow truncate">sales@advikgroups.com</a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Mail size={14} className="text-advik-yellow shrink-0" />
+                    <a href="mailto:contact.advikenterprises@gmail.com" className="hover:text-advik-yellow truncate ">contact.advikenterprises@gmail.com</a>
                   </li>
                 </ul>
               </div>

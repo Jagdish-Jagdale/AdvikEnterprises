@@ -183,10 +183,11 @@ const ContactUsPage = () => {
                 <Mail className="size-6 md:size-7" />
               </div>
               <div className="space-y-1">
-                <p className="text-gray-400 font-inter text-[10px] uppercase font-bold tracking-widest">Email Connect</p>
-                <div className="text-advik-navy font-display text-[12px] md:text-sm space-y-1">
-                  <p className="break-all">info@advikenterprise.com</p>
-                  <p className="break-all">marketing@advikenterprises.com</p>
+                <p className="text-gray-400 font-inter text-[10px]  font-bold tracking-widest">Email Connect</p>
+                <div className="text-advik-navy font-display text-[12px] lowercase md:text-sm space-y-1">
+                  <p className="break-all">info@advikgroups.com</p>
+                  <p className="break-all">marketing@advikgroups.com</p>
+                  <p className="break-all">sales@advikgroups.com</p>
                   <p className="break-all">contact.advikenterprises@gmail.com</p>
                 </div>
               </div>

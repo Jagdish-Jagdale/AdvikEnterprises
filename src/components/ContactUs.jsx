@@ -61,7 +61,7 @@ const ContactUs = () => {
         limit(10)
       );
       const querySnapshot = await getDocs(q);
-      
+
       let hasRecentSubmission = false;
       querySnapshot.forEach((doc) => {
         const docData = doc.data();
@@ -149,9 +149,10 @@ const ContactUs = () => {
                 <div>
                   <p className="font-display text-sm text-advik-navy mb-1">Email Connect</p>
                   <div className="text-gray-500 text-sm space-y-1">
-                    <p>info@advikenterprise.com</p>
-                    <p>marketing@advikenterprises.com</p>
-                    <p className="break-all text-xs opacity-70">contact.advikenterprises@gmail.com</p>
+                    <p>info@advikgroups.com</p>
+                    <p>marketing@advikgroups.com</p>
+                    <p>sales@advikgroups.com</p>
+                    <p >contact.advikenterprises@gmail.com</p>
                   </div>
                 </div>
               </div>
