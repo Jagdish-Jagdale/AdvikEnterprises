@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert PDF files to Excel spreadsheets instantly. Free, fast, and secure PDF to XLSX converter with table extraction.">
+    <title>PDF to Excel Converter — Instant PDF Table Extraction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-mesh">
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+    </div>
+    <div class="bg-grid"></div>
+
+    <main class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="app-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                </svg>
+            </div>
+            <h1 class="app-title">PDF to Excel</h1>
+            <p class="app-subtitle">Convert your PDF documents to beautifully formatted Excel spreadsheets in seconds. Free, fast, and secure.</p>
+        </header>
+
+        <!-- Upload Card -->
+        <section class="upload-card" id="uploadCard">
+            <!-- Dropzone -->
+            <div class="dropzone" id="dropzone">
+                <div class="dropzone-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                </div>
+                <div class="dropzone-text">
+                    <p class="dropzone-title">Drag & drop your PDF here or <span>browse</span></p>
+                    <p class="dropzone-hint">Supports PDF files up to 50 MB</p>
+                </div>
+            </div>
+            <input type="file" id="fileInput" accept=".pdf" hidden>
+
+            <!-- File Info -->
+            <div class="file-info" id="fileInfo">
+                <div class="file-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                </div>
+                <div class="file-details">
+                    <p class="file-name" id="fileName"></p>
+                    <p class="file-size" id="fileSize"></p>
+                </div>
+                <button class="file-remove" id="fileRemove" title="Remove file">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <span id="errorText"></span>
+            </div>
+
+            <!-- Language Selection -->
+            <div class="language-selection">
+                <p class="selection-label">Document Language</p>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="language" value="mr" checked>
+                        <span class="radio-custom"></span>
+                        <span class="radio-text">Marathi (मराठी)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="language" value="en">
+                        <span class="radio-custom"></span>
+                        <span class="radio-text">English / Other</span>
+                    </label>
+                </div>
+                <p class="selection-hint">Note: Marathi mode enables high-accuracy Voter List extraction.</p>
+            </div>
+
+            <!-- Column Selection -->
+            <div class="column-selection">
+                <p class="selection-label">Column Headings to Extract (Optional)</p>
+                <div class="input-group">
+                    <input type="text" id="columnHeadings" placeholder="e.g. Sr No, Voter Name, Age, Gender" class="text-input">
+                    <div class="input-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="selection-hint">Enter comma-separated headings to extract specific columns and filter out unnecessary data.</p>
+            </div>
+
+            <!-- Convert Button -->
+            <button class="convert-btn" id="convertBtn">
+                <span class="btn-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    Convert to Excel
+                </span>
+            </button>
+
+            <!-- Progress -->
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p class="progress-text" id="progressText">Preparing...</p>
+            </div>
+        </section>
+
+        <!-- Result Card -->
+        <section class="result-card" id="resultCard">
+            <div class="result-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </div>
+            <h2 class="result-title">Conversion Complete!</h2>
+            <p class="result-subtitle">Your Excel file is ready to download.</p>
+
+            <div class="stats-row">
+                <div class="stat-badge tables">
+                    <span class="stat-number" id="tablesFound">0</span>
+                    <span class="stat-label">Tables Found</span>
+                </div>
+                <div class="stat-badge pages">
+                    <span class="stat-number" id="textPages">0</span>
+                    <span class="stat-label">Text Pages</span>
+                </div>
+                <div class="stat-badge sheets">
+                    <span class="stat-number" id="sheetsCreated">0</span>
+                    <span class="stat-label">Sheets Created</span>
+                </div>
+            </div>
+
+            <a class="download-btn" id="downloadBtn" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Excel
+            </a>
+            <br>
+            <button class="convert-another" id="convertAnother">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="1 4 1 10 7 10"/>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                </svg>
+                Convert Another
+            </button>
+        </section>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Table Extraction</h3>
+                <p class="feature-desc">Automatically detects and extracts tables from your PDF pages</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">100% Secure</h3>
+                <p class="feature-desc">Files are processed locally and deleted immediately after conversion</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Lightning Fast</h3>
+                <p class="feature-desc">Powered by advanced algorithms for instant conversion results</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>PDF to Excel Converter &bull; Built with Python & Flask</p>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
