@@ -18,7 +18,7 @@ ALLOWED_EXTENSIONS = {'pdf'}
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
-# Initialize EasyOCR reader (Lazy-loaded cache)
+# Initialize EasyOCR reader (Lazy-loaded cachess)
 ocr_readers = {}
 
 def get_ocr_reader(lang):
